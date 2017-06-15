@@ -9,7 +9,7 @@
             <Entry x:Name="txtNotes" Text="{Binding Notes}" />
             <Switch x:Name="swDone" IsToggled="{Binding Done}" />
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnEdit" Text="Edit" />
+                <Button x:Name="btnEdit" Text="Edit" Clicked="btnEdit_Clicked" />
                 <Button x:Name="btnDelete" Text="Delete" />
                 <Button x:Name="btnBack" Text="Back" />
             </StackLayout>

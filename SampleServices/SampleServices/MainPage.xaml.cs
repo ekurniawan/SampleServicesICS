@@ -29,5 +29,13 @@ namespace SampleServices
         {
             await Navigation.PushAsync(new TambahData());
         }
+
+        private async void lvTodo_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var item = (TodoItem)e.Item;
+            EditData editPage = new EditData();
+            editPage.BindingContext = item;
+            await Navigation.PushModalAsync(editPage);
+        }
     }
 }

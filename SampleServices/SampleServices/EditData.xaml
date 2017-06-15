@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SampleServices.EditData" Title="Edit TodoItem">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="txtID" Text="{Binding ID}" IsEnabled="False" />
+            <Entry x:Name="txtName" Text="{Binding Name}" />
+            <Entry x:Name="txtNotes" Text="{Binding Notes}" />
+            <Switch x:Name="swDone" IsToggled="{Binding Done}" />
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnEdit" Text="Edit" />
+                <Button x:Name="btnDelete" Text="Delete" />
+                <Button x:Name="btnBack" Text="Back" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

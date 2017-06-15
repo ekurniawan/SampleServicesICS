@@ -66,10 +66,10 @@ namespace SampleServices.Services
             }
         }
 
-        public async Task DeleteData(TodoItem todoItem)
+        public async Task DeleteData(string id)
         {
             var strUrl = new Uri(Path.Combine(Koneksi.RestUrl, 
-                string.Format("api/TodoItem/{0}", todoItem.ID)));
+                string.Format("api/TodoItem/{0}", id)));
             HttpResponseMessage response = null;
             response = await _client.DeleteAsync(strUrl);
             if (!response.IsSuccessStatusCode)

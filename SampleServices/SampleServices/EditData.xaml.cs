@@ -44,5 +44,24 @@ namespace SampleServices
                 await DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
+        private async void btnDelete_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await todoServices.DeleteData(txtID.Text);
+                await DisplayAlert("Keterangan", "Delete data berhasil !", "OK");
+                await Navigation.PopModalAsync();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
+
+        private async void btnBack_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

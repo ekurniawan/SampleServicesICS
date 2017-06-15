@@ -10,8 +10,8 @@
             <Switch x:Name="swDone" IsToggled="{Binding Done}" />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnEdit" Text="Edit" Clicked="btnEdit_Clicked" />
-                <Button x:Name="btnDelete" Text="Delete" />
-                <Button x:Name="btnBack" Text="Back" />
+                <Button x:Name="btnDelete" Text="Delete" Clicked="btnDelete_Clicked" />
+                <Button x:Name="btnBack" Text="Back" Clicked="btnBack_Clicked" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

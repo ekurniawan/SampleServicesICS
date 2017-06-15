@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleServices"
+             x:Class="SampleServices.MainPage" Title="Todo List">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="btnTambah" Text="Tambah Data" Clicked="btnTambah_Clicked" />
+        </StackLayout>
+        <ListView x:Name="lvTodo" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding ID}" FontSize="Medium" />
+                            <Label Text="{Binding Name}" FontSize="Medium" />
+                            <Label Text="{Binding Notes}" FontSize="Medium" />
+                            <Switch IsToggled="{Binding Done}" HorizontalOptions="Start" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

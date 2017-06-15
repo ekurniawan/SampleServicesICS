@@ -37,7 +37,7 @@ namespace SampleServices
             {
                 await todoServices.UpdateData(editData);
                 await DisplayAlert("Keterangan", "Edit data berhasil !", "OK");
-                await Navigation.PopAsync();
+                await Navigation.PopModalAsync();
             }
             catch (Exception ex)
             {

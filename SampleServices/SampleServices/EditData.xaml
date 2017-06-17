@@ -4,14 +4,15 @@
              x:Class="SampleServices.EditData" Title="Edit TodoItem">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="txtID" Text="{Binding ID}" IsEnabled="False" />
-            <Entry x:Name="txtName" Text="{Binding Name}" />
-            <Entry x:Name="txtNotes" Text="{Binding Notes}" />
-            <Switch x:Name="swDone" IsToggled="{Binding Done}" />
+            <Entry Text="{Binding ID}" IsEnabled="False" />
+            <Entry Text="{Binding Name}" />
+            <Entry Text="{Binding Notes}" />
+            <Switch IsToggled="{Binding Done}" />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnEdit" Text="Edit" Clicked="btnEdit_Clicked" />
                 <Button x:Name="btnDelete" Text="Delete" Clicked="btnDelete_Clicked" />
                 <Button x:Name="btnBack" Text="Back" Clicked="btnBack_Clicked" />
+                <Button x:Name="btnBinding" Text="Binding" Clicked="btnBinding_Clicked" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

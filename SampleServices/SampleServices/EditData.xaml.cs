@@ -25,17 +25,10 @@ namespace SampleServices
 
         private async void btnEdit_Clicked(object sender, EventArgs e)
         {
-            var editData = new TodoItem
-            {
-                ID = txtID.Text,
-                Name = txtName.Text,
-                Notes = txtNotes.Text,
-                Done = swDone.IsToggled
-            };
-
             try
             {
-                await todoServices.UpdateData(editData);
+                var editTodo = (TodoItem)BindingContext;
+                await todoServices.UpdateData(editTodo);
                 await DisplayAlert("Keterangan", "Edit data berhasil !", "OK");
                 await Navigation.PopModalAsync();
             }
@@ -49,7 +42,8 @@ namespace SampleServices
         {
             try
             {
-                await todoServices.DeleteData(txtID.Text);
+                var deleteTodo = (TodoItem)BindingContext;
+                await todoServices.DeleteData(deleteTodo.ID);
                 await DisplayAlert("Keterangan", "Delete data berhasil !", "OK");
                 await Navigation.PopModalAsync();
             }
@@ -62,6 +56,12 @@ namespace SampleServices
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        private void btnBinding_Clicked(object sender, EventArgs e)
+        {
+            var data = (TodoItem)BindingContext;
+            data.Name = "Diubah dari kode";
         }
     }
 }

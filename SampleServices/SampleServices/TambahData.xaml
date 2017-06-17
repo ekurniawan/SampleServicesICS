@@ -4,10 +4,10 @@
              x:Class="SampleServices.TambahData" Title="Tambah Data">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="txtID" IsEnabled="False" />
-            <Entry x:Name="txtName" Placeholder="insert name" />
-            <Entry x:Name="txtNotes" Placeholder="insert notes" />
-            <Switch x:Name="swDone" />
+            <Entry Text="{Binding ID}" IsEnabled="False" />
+            <Entry Text="{Binding Name}"  Placeholder="insert name" />
+            <Entry Text="{Binding Notes}" Placeholder="insert notes" />
+            <Switch IsToggled="{Binding Done}" />
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="btnTambah" Text="Tambah" Clicked="btnTambah_Clicked" />
                 <Button x:Name="btnBack" Text="Back" Clicked="btnBack_Clicked" />

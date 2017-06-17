@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using SampleServices.Models;
 using SampleServices.Services;
+using System.Collections.ObjectModel;
 
 namespace SampleServices
 {
@@ -21,7 +22,8 @@ namespace SampleServices
         {
             TodoItemServices todoServices = new TodoItemServices();
             TodoItemList todoItemList = new TodoItemList();
-            todoItemList.ListTodoItem = await todoServices.GetAll();
+            todoItemList.ListTodoItem =  
+                new ObservableCollection<TodoItem>(await todoServices.GetAll());
             lvTodo.ItemsSource = todoItemList.ListTodoItem;
         }
 

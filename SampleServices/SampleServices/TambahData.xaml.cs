@@ -20,22 +20,20 @@ namespace SampleServices
         {
             InitializeComponent();
             todoServices = new TodoItemServices();
-            txtID.Text = Guid.NewGuid().ToString().Substring(0, 10);
+            string idRandom = Guid.NewGuid().ToString().Substring(0, 10);
+            var newData = new TodoItem
+            {
+                ID = idRandom
+            };
+            this.BindingContext = newData;
         }
 
         private async void btnTambah_Clicked(object sender, EventArgs e)
         {
-            var newData = new TodoItem
-            {
-                ID = txtID.Text,
-                Name = txtName.Text,
-                Notes = txtNotes.Text,
-                Done = swDone.IsToggled
-            };
-
             try
             {
-                await todoServices.TambahData(newData);
+                var data = (TodoItem)BindingContext;
+                await todoServices.TambahData(data);
                 await DisplayAlert("Keterangan", "Tambah Data Berhasil !", "OK");
                 await Navigation.PopAsync();
             }

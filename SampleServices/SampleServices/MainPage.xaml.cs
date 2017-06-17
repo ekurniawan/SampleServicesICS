@@ -39,5 +39,12 @@ namespace SampleServices
             editPage.BindingContext = item;
             await Navigation.PushModalAsync(editPage);
         }
+
+        private void btnDelete_Clicked(object sender, EventArgs e)
+        {
+            var data = (ObservableCollection<TodoItem>)lvTodo.ItemsSource;
+            data.RemoveAt(0);
+            //await DisplayAlert("Keterangan", data[1].Name, "OK");
+        }
     }
 }

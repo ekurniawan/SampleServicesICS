@@ -7,6 +7,7 @@
     <StackLayout>
         <StackLayout Orientation="Horizontal">
             <Button x:Name="btnTambah" Text="Tambah Data" Clicked="btnTambah_Clicked" />
+            <Button x:Name="btnDelete" Text="Delete Data" Clicked="btnDelete_Clicked" />
         </StackLayout>
         <ListView x:Name="lvTodo" HasUnevenRows="True" ItemTapped="lvTodo_ItemTapped">
             <ListView.ItemTemplate>
